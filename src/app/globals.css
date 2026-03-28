@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF7F2;
+  --text-primary: #2C2C2C;
+  --text-secondary: #6B6560;
+  --accent-blue: #012169;
+  --accent-terra: #C4623A;
+  --grid-lines: #C8D6E8;
+  --border: #E8E3DC;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-terra: var(--accent-terra);
+  --color-grid-lines: var(--grid-lines);
+  --color-border: var(--border);
+  --font-sans: "Space Grotesk", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1A1814;
+    --text-primary: #F0EBE3;
+    --text-secondary: #9E9790;
+    --accent-blue: #4A90D9;
+    --accent-terra: #D4784D;
+    --grid-lines: #2C2825;
+    --border: #2E2B27;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Graph paper grid at reduced opacity */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-lines) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-lines) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
