@@ -1,59 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAF7F2;
-  --text-primary: #2C2C2C;
-  --text-secondary: #6B6560;
-  --accent-blue: #012169;
-  --accent-terra: #C4623A;
-  --grid-lines: #C8D6E8;
-  --border: #E8E3DC;
-}
+  --background: #ffffff;
+  --foreground: #000000;
+  --muted: #555555;
+  --border: #e0e0e0;
+  --placeholder: #f0f0f0;
+  --primary: #000000;
+  --accent: #000000;
+  --accent-fg: #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--text-primary);
-  --color-secondary: var(--text-secondary);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-terra: var(--accent-terra);
-  --color-grid-lines: var(--grid-lines);
-  --color-border: var(--border);
-  --font-sans: "Space Grotesk", sans-serif;
+  --text-xs: clamp(0.85rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  --text-hero: clamp(2.5rem, 1.8rem + 3.5vw, 4.5rem);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1A1814;
-    --text-primary: #F0EBE3;
-    --text-secondary: #9E9790;
-    --accent-blue: #4A90D9;
-    --accent-terra: #D4784D;
-    --grid-lines: #2C2825;
-    --border: #2E2B27;
+    --background: #0a0a0a;
+    --foreground: #e5e5e5;
+    --muted: #999999;
+    --border: #2a2a2a;
+    --placeholder: #1a1a1a;
+    --primary: #e5e5e5;
+    --accent: #a3e635;
+    --accent-fg: #000000;
   }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-placeholder: var(--placeholder);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-display: var(--font-syne), "Syne", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--background);
-  color: var(--text-primary);
+  color: var(--foreground);
   font-family: "Space Grotesk", sans-serif;
-}
-
-/* Graph paper grid at reduced opacity */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--grid-lines) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-lines) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 0;
-}
-
-body > * {
-  position: relative;
-  z-index: 1;
+  font-size: var(--text-base);
+  line-height: 1.6;
 }
