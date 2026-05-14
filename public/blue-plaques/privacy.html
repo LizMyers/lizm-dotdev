@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue Plaques — Privacy Policy</title>
+  <style>
+    :root {
+      --plaque-blue: #003B8E;
+      --charcoal: #232323;
+      --muted: #555;
+      --surface: #f8f7f4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+      color: var(--charcoal);
+      background: var(--surface);
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin: 0 0 4px;
+      color: var(--charcoal);
+    }
+    .subtitle {
+      font-size: 15px;
+      color: var(--plaque-blue);
+      font-weight: 500;
+      margin: 0 0 6px;
+    }
+    .updated {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 36px;
+    }
+    h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--plaque-blue);
+      margin: 36px 0 10px;
+    }
+    p, li { font-size: 16px; color: var(--charcoal); }
+    p { margin: 0 0 14px; }
+    ul { padding-left: 22px; margin: 0 0 14px; }
+    li { margin-bottom: 6px; }
+    a { color: var(--plaque-blue); }
+    .lead {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    footer {
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid #dcdad4;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="subtitle">BLUE PLAQUES</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 14 May 2026</p>
+
+    <p class="lead">
+      Blue Plaques is a free iOS app that helps you discover London's commemorative blue plaques on foot.
+      We've designed it to collect as little personal information as possible — there are no accounts,
+      no advertising, no third-party tracking, and no sale of data.
+    </p>
+
+    <h2>What we don't collect</h2>
+    <ul>
+      <li>We do not require an account, email, name, phone number, or any identifier.</li>
+      <li>We do not track your activity across other apps or websites.</li>
+      <li>We do not use third-party advertising or data brokers.</li>
+      <li>We do not sell your data, ever.</li>
+    </ul>
+
+    <h2>What stays on your device</h2>
+    <ul>
+      <li><strong>Your location.</strong> If you grant permission, the app reads your device location to centre the map, find plaques near you, and plan walks from where you are. Your location is processed entirely on-device and is not transmitted to our servers.</li>
+      <li><strong>Visited and saved plaques.</strong> The list of plaques you've visited and the walks you've saved are stored locally in app storage. In a future release these will optionally sync via iCloud Key-Value Store (Apple) so they survive reinstalling the app — that sync is end-to-end controlled by Apple and tied to your iCloud account, not to us.</li>
+      <li><strong>Voice input.</strong> The microphone is used only when you tap the "Tap to speak" button. Speech-to-text is performed by iOS on-device; we do not record or store audio.</li>
+      <li><strong>App settings.</strong> Narration voice, language, distance units, and similar preferences are stored locally.</li>
+    </ul>
+
+    <h2>What is sent to third parties</h2>
+    <p>To deliver some features, the app sends limited, non-identifying requests to external services:</p>
+    <ul>
+      <li><strong>Anthropic (Claude API).</strong> When you ask the AI walk planner to suggest a route, or use any AI-curated content, the app sends your typed or spoken request, your selected start/end locations, and relevant plaque metadata to Anthropic. We do not include your name, email, device ID, or any account identifier in these requests. See <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's privacy policy</a>.</li>
+      <li><strong>Google Maps Platform.</strong> The map tiles, geocoding (turning addresses into coordinates), and walking directions are powered by Google Maps. Their handling is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</li>
+      <li><strong>Bug reports you submit.</strong> If you use the "Report a Problem" feature, the text you write (plus the plaque ID, name, address, and coordinates involved) is sent to a private Google Sheet via a Google Apps Script endpoint. We do not associate the report with you. Please don't include personal information in the free-text field.</li>
+      <li><strong>Wikipedia / Wikimedia Commons.</strong> Portraits and historical context are loaded from public Wikimedia URLs. No identifying information is sent with these requests beyond what any web request contains (IP address, user agent), and these are governed by the <a href="https://foundation.wikimedia.org/wiki/Privacy_policy" target="_blank" rel="noopener">Wikimedia Foundation's privacy policy</a>.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>Blue Plaques is not directed at children under 13 and does not knowingly collect information from children.</p>
+
+    <h2>Notifications</h2>
+    <p>If you opt in to push notifications, the app may notify you when you walk near a plaque you haven't visited. Notification scheduling is handled on-device by iOS; no notification content is sent through our servers.</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>Because we do not store your data on our servers, there is nothing for us to delete on your behalf. To remove all data the app has stored locally, simply uninstall the app from your device. Bug reports you've submitted, which are anonymous, are retained for triage and improvement of the app.</p>
+
+    <h2>Security</h2>
+    <p>All network requests from the app are made over HTTPS. The Anthropic and Google APIs are accessed using API keys held within the app build; in a future release these will be proxied through a Cloudflare Worker that enforces a daily usage ceiling.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we materially change how the app handles data, we will update this page and revise the "Last updated" date above. Continued use of the app after such a change constitutes acceptance of the revised policy.</p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy or your data?<br>
+      Email: <a href="mailto:support@sanddollarapps.com">support@sanddollarapps.com</a>
+    </p>
+
+    <footer>
+      Blue Plaques is published by Sand Dollar Apps. This policy applies only to the Blue Plaques iOS app and the privacy practices described above. Third-party services linked from this policy maintain their own privacy practices, which we encourage you to review.
+    </footer>
+  </main>
+</body>
+</html>
